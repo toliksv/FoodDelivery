@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FoodDelivery.PostgreSql.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse">
+            <summary>
+            Ответ на запросы получения соыбтий.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse.CreateEvents">
+            <summary>
+            Событие создания заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse.SetStatusEvents">
+            <summary>
+            События установки статуса заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse.AddOrderItemEvents">
+            <summary>
+            События добавления блюд в заказ.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse.RemoveOrderItemEvents">
+            <summary>
+            События удаления блюд из заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.PostgreSql.WebApi.Application.Web.Orders.OrderQueryResponse.ChangeOrderItemQuantityEvents">
+            <summary>
+            События изменения количества блюд в заказе.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.PostgreSql.WebApi.Controllers.OrderPostgreSqlAdapterController">
+            <summary>
+            Контроллер для работы с событиями по заказам
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.PostgreSql.WebApi.Controllers.OrderPostgreSqlAdapterController.WriteCreateOrderEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.CreateOrderEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события создания заказа.
+            </summary>
+            <param name="createOrderEvent"><see cref="T:FoodDelivery.Core.Contracts.Application.Events.Orders.CreateOrderEvent" /></param>
+            <param name="cancellationToken">токен отменыю</param>
+            <returns>результат.</returns>
+        </member>
+    </members>
+</doc>

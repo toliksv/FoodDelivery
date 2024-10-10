@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FoodDelivery.Core.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:FoodDelivery.Core.WebApi.Adapters.Orders.In.OrderStorage">
+            <inheritdoc cref="T:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage" />
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper">
+            <summary>
+            Маппинг между командами ядра и их представлениями.ать зая
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper.Map(FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest)">
+            <summary>
+            Маппинг <see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest"/> на <see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.CreateOrderCommand"/>.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest"/>.</param>
+            <returns><see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.CreateOrderCommand"/></returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper.Map(FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.SetOrderStatusCommandRequest)">
+            <summary>
+            Маппинг <see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.SetOrderStatusCommandRequest"/> на <see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.SetOrderStatusCommand"/>.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest"/>.</param>
+            <returns><see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.SetOrderStatusCommand"/></returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper.Map(FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.AddItemsToOrderCommandRequest)">
+            <summary>
+            Маппинг <see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.AddItemsToOrderCommandRequest"/> на <see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.AddItemsToOrderCommand"/>.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.AddItemsToOrderCommandRequest"/>.</param>
+            <returns><see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.AddItemsToOrderCommand"/></returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper.Map(FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.RemoveItemsFromOrderCommandRequest)">
+            <summary>
+            Маппинг <see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.RemoveItemsFromOrderCommandRequest"/> на <see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.RemoveItemsFromOrderCommand"/>.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.RemoveItemsFromOrderCommandRequest"/>.</param>
+            <returns><see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.RemoveItemsFromOrderCommand"/></returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Commands.Orders.Mappers.IOrderCommandMapper.Map(FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.ChangeOrderItemQuantityCommandRequest)">
+            <summary>
+            Маппинг <see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.ChangeOrderItemQuantityCommandRequest"/> на <see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.ChangeOrderItemQuantityCommand"/>.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.ChangeOrderItemQuantityCommandRequest"/>.</param>
+            <returns><see cref="T:FoodDelivery.Core.Contracts.Application.Commands.Orders.ChangeOrderItemQuantityCommand"/></returns>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.AddItemsToOrderCommandRequest">
+            <summary>
+            WEB представление для добавления блюд в заказ.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.AddItemsToOrderCommandRequest.OrderItems">
+            <summary>
+            Позиции для добавления заказа.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.ChangeOrderItemQuantityCommandRequest">
+            <summary>
+            WEB представление команды изменения количества блюда в заказе.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.ChangeOrderItemQuantityCommandRequest.ItemsWithNewQuantity">
+            <summary>
+            Позиции с новыми значениями количества.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest">
+            <summary>
+            Web представления команды создания заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.CreateOrderCommandRequest.Items">
+            <summary>
+            Пункты меню.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.OrderCommandRequestBase">
+            <summary>
+            Базовый класс для REST представления команд.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.OrderCommandRequestBase.ClientId">
+            <summary>
+            Идентификатор клиента.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.OrderUpdateCommandRequestBase">
+            <summary>
+            Базовый класс запроса для комнад изменения заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.OrderUpdateCommandRequestBase.OrderId">
+            <summary>
+            Идентификатор клиента.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.RemoveItemsFromOrderCommandRequest">
+            <summary>
+            WEB представление команды удаления блюда из заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.RemoveItemsFromOrderCommandRequest.MenuItemsIds">
+            <summary>
+            Идентификаторы блюд к удалению.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.SetOrderStatusCommandRequest">
+            <summary>
+            WEB представление команды 
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Commands.Orders.Web.SetOrderStatusCommandRequest.Status">
+            <summary>
+            Статус заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderDto.OrderId">
+            <summary>
+            Идентификатор заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderDto.ClientId">
+            <summary>
+            Идентификатор клиента.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderDto.OrderStatus">
+            <summary>
+            Статус заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderDto.OrderItems">
+            <summary>
+            Блюда в заказе
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto">
+            <summary>
+            Web представление пункта заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto.MenuItemId">
+            <summary>
+            Идентификатор блюда.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto.Name">
+            <summary>
+            Наименование блюда.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto.Description">
+            <summary>
+            Описание блюда.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto.Price">
+            <summary>
+            Цена блюда.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Dto.Orders.OrderItemDto.Quantity">
+            <summary>
+            Количество блюд.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Mappers.IOrdersQueryMapper">
+            <summary>
+            Маппинг ответов от обработчика <see cref="T:FoodDelivery.Core.Contracts.Ports.Orders.In.IOrdersQueriesHandler" /> на web ответ.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Queries.Orders.Mappers.IOrdersQueryMapper.Map(FoodDelivery.Core.Contracts.Application.Queries.Orders.GetOrderByIdQueryResponse)">
+            <summary>
+            Маппинг ответа обработчика по запросу заказа по id на web ответ.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.Contracts.Application.Queries.Orders.GetOrderByIdQueryResponse" /></param>
+            <returns><see cref="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetOrderByIdResponse"/></returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Application.Queries.Orders.Mappers.IOrdersQueryMapper.Map(FoodDelivery.Core.Contracts.Application.Queries.Orders.GetClientOrdersQueryResponse)">
+            <summary>
+            Маппинг ответа обработчика по запросу заказов клиента на web ответ.
+            </summary>
+            <param name="source"><see cref="T:FoodDelivery.Core.Contracts.Application.Queries.Orders.GetClientOrdersQueryResponse" /></param>
+            <returns><see cref="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetClientOrdersResponse"/></returns>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetClientOrdersResponse">
+            <summary>
+            Ответ на запрос заказов клиента.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetClientOrdersResponse.ClientOrders">
+            <summary>
+            клиентские заказы.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetOrderByIdResponse">
+            <summary>
+            Ответ на запрос заказа по идентификатору.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.GetOrderByIdResponse.Order">
+            <summary>
+            Заказ.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse">
+            <summary>
+            Ответ от хранилища на запросы событий.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse.CreateEvents">
+            <summary>
+            Событие создания заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse.SetStatusEvents">
+            <summary>
+            События установки статуса заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse.AddOrderItemEvents">
+            <summary>
+            События добавления блюд в заказ.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse.RemoveOrderItemEvents">
+            <summary>
+            События удаления блюд из заказа.
+            </summary>
+        </member>
+        <member name="P:FoodDelivery.Core.WebApi.Application.Queries.Orders.Web.OrderEventsQueryStorageResponse.ChangeOrderItemQuantityEvents">
+            <summary>
+            События изменения количества блюд в заказе.
+            </summary>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Ports.Menu.In.IMenuStorage">
+            <summary>
+            Клиент к хранилищу данных в части меню.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Menu.In.IMenuStorage.GetMenu(System.Threading.CancellationToken)">
+            <summary>
+            Получить меню.
+            </summary>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание меню.</returns>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Ports.Menu.Out.IMenuStorageController">
+            <summary>
+            Клиент к хранилищу меню.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Menu.Out.IMenuStorageController.GetAll(System.Threading.CancellationToken)">
+            <summary>
+            Получить меню.
+            </summary>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>меню.</returns>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage">
+            <summary>
+            Обработчик запросов к хранилищу.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.WriteCreateOrderEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.CreateOrderEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события создания заказа.
+            </summary>
+            <param name="createOrderEvent">событие создания заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.WriteSetOrderStatusEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.SetOrderStatusEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события установки статуса заказу.
+            </summary>
+            <param name="setOrderStatusEvent">событие установки статуса.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.WriteAddOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.AddOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись добавление блюда в заказ.
+            </summary>
+            <param name="addOrderItemEvent">событие добавления блюда.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения.</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.WriteRemoveOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.RemoveOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события удаления блюда из меню
+            </summary>
+            <param name="addOrderItemEvent">событие удаления блюда из меню.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.WriteChangeOrderItemQuantityEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.ChangeOrderItemQuantityEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события изменения количества блюда в заказе.
+            </summary>
+            <param name="addOrderItemEvent">событие изменения количества блюда.</param>
+            <param name="cancellationToken">токе отмены</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.GetOrderEventsByOrderId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по заказу.
+            </summary>
+            <param name="orderId">идентификатор заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorage.GetOrderEventsByClientId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по клиенту.
+            </summary>
+            <param name="clientId">Идентификатор клиента.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>    
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper">
+            <summary>
+            Обертка <see cref="T:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController" /> для ValueValueTask.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.WriteCreateOrderEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.CreateOrderEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события создания заказа.
+            </summary>
+            <param name="createOrderEvent">событие создания заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.WriteSetOrderStatusEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.SetOrderStatusEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события установки статуса заказу.
+            </summary>
+            <param name="setOrderStatusEvent">событие установки статуса.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.WriteAddOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.AddOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись добавление блюда в заказ.
+            </summary>
+            <param name="addOrderItemEvent">событие добавления блюда.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения.</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.WriteRemoveOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.RemoveOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события удаления блюда из меню
+            </summary>
+            <param name="addOrderItemEvent">событие удаления блюда из меню.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.WriteChangeOrderItemQuantityEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.ChangeOrderItemQuantityEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события изменения количества блюда в заказе.
+            </summary>
+            <param name="addOrderItemEvent">событие изменения количества блюда.</param>
+            <param name="cancellationToken">токе отмены</param>
+            <returns>ожидание выполнения</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.GetOrderEventsByOrderId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по заказу.
+            </summary>
+            <param name="orderId">идентификатор заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>    
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.In.IOrderStorageControllerWrapper.GetOrderEventsByClientId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по клиенту.
+            </summary>
+            <param name="clientId">Идентификатор клиента.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>    
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController">
+            <summary>
+            Интерфейс к контролеру PostgreSql.WebApi.
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.WriteCreateOrderEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.CreateOrderEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события создания заказа.
+            </summary>
+            <param name="createOrderEvent">событие создания заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.WriteSetOrderStatusEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.SetOrderStatusEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события установки статуса заказу.
+            </summary>
+            <param name="setOrderStatusEvent">событие установки статуса.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.WriteAddOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.AddOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись добавление блюда в заказ.
+            </summary>
+            <param name="addOrderItemEvent">событие добавления блюда.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения.</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.WriteRemoveOrderItemEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.RemoveOrderItemEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события удаления блюда из меню
+            </summary>
+            <param name="addOrderItemEvent">событие удаления блюда из меню.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>ожидание выполнения</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.WriteChangeOrderItemQuantityEvent(FoodDelivery.Core.Contracts.Application.Events.Orders.ChangeOrderItemQuantityEvent,System.Threading.CancellationToken)">
+            <summary>
+            Запись события изменения количества блюда в заказе.
+            </summary>
+            <param name="addOrderItemEvent">событие изменения количества блюда.</param>
+            <param name="cancellationToken">токе отмены</param>
+            <returns>ожидание выполнения</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.GetOrderEventsByOrderId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по заказу.
+            </summary>
+            <param name="orderId">идентификатор заказа.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Ports.Orders.Out.IOrderStorageController.GetOrderEventsByClientId(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Получение событий по клиенту.
+            </summary>
+            <param name="clientId">Идентификатор клиента.</param>
+            <param name="cancellationToken">токен отмены.</param>
+            <returns>список заказов.</returns>
+        </member>
+        <member name="T:FoodDelivery.Core.WebApi.Register.ServiceCollectionExtensions">
+            <summary>
+            Методы регистрации функционала
+            </summary>
+        </member>
+        <member name="M:FoodDelivery.Core.WebApi.Register.ServiceCollectionExtensions.RegisterPolly(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Реристрация стратегии Polly.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
