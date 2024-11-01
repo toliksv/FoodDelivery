@@ -26,5 +26,5 @@ public interface IOrderManager
     /// </summary>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task PayForOrder(CancellationToken cancellationToken)
+    Task PayForOrder(CancellationToken cancellationToken);
 }

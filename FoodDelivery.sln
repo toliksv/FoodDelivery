@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{47D20B5B-2726-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDelivery.UI.Console", "UI\FoodDelivery.UI.Console\FoodDelivery.UI.Console.csproj", "{767AB3A4-D1F4-4F0C-9EDC-2E6C26CA78E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDelivery.Kafka", "Insfrastructure\FoodDelivery.Kafka\FoodDelivery.Kafka.csproj", "{DD1CA760-9817-459F-A6FA-F0349EA502EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDelivery.Kafka.Contracts", "Insfrastructure\FoodDelivery.Kafka.Contracts\FoodDelivery.Kafka.Contracts.csproj", "{D8722B0A-8DD8-44EA-A490-5B4075730D80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{767AB3A4-D1F4-4F0C-9EDC-2E6C26CA78E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{767AB3A4-D1F4-4F0C-9EDC-2E6C26CA78E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{767AB3A4-D1F4-4F0C-9EDC-2E6C26CA78E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD1CA760-9817-459F-A6FA-F0349EA502EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD1CA760-9817-459F-A6FA-F0349EA502EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD1CA760-9817-459F-A6FA-F0349EA502EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD1CA760-9817-459F-A6FA-F0349EA502EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8722B0A-8DD8-44EA-A490-5B4075730D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8722B0A-8DD8-44EA-A490-5B4075730D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8722B0A-8DD8-44EA-A490-5B4075730D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8722B0A-8DD8-44EA-A490-5B4075730D80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +74,7 @@ Global
 		{6B759144-EF4A-4E79-9DFC-3DD6AF449836} = {0EDC8D32-1D87-4E79-B980-87093D496319}
 		{43D3DD5E-458C-4F1F-9F72-B7195EC799B4} = {3B132C7E-6858-411F-9790-36C940EC99E8}
 		{767AB3A4-D1F4-4F0C-9EDC-2E6C26CA78E2} = {47D20B5B-2726-4543-BC6F-4A69B40ACB74}
+		{DD1CA760-9817-459F-A6FA-F0349EA502EF} = {0EDC8D32-1D87-4E79-B980-87093D496319}
+		{D8722B0A-8DD8-44EA-A490-5B4075730D80} = {0EDC8D32-1D87-4E79-B980-87093D496319}
 	EndGlobalSection
 EndGlobal

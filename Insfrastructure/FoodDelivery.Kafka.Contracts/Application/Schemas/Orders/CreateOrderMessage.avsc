@@ -1,0 +1,10 @@
+{
+  "namespace" : "avro",
+  "type": "record",
+  "name": "CreateOrderMessage",
+  "fields": [
+    {"name": "OrderId", "type": "int"},
+    {"name": "ClientId", "type": "int"},
+    {"name": "OccurredOn", "type": "long"}
+  ]
+}

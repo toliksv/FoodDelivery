@@ -1,0 +1,12 @@
+{
+  "namespace" : "avro",
+  "type": "record",
+  "name": "ChangeOrderItemQuantityMessage",
+  "fields": [
+    {"name": "OrderId", "type": "int"},
+    {"name": "ClientId", "type": "int"},
+    {"name": "OccurredOn", "type": "long"},
+    {"name": "MenuItemId", "type":"int"},
+    {"name": "NewQuantity", "type":"int"}
+  ]
+}

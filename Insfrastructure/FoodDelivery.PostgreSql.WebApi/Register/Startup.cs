@@ -1,7 +1,9 @@
 using System;
 using System.Reflection;
+using FoodDelivery.Kafka.Register;
 using FoodDelivery.PostgreSql.Application.Models;
 using FoodDelivery.PostgreSql.Registrations;
+using FoodDelivery.PostgreSql.WebApi.Events;
 using LinqToDB;
 using LinqToDB.AspNet;
 using LinqToDB.AspNet.Logging;
@@ -36,9 +38,15 @@ public class Startup
                 .UsePostgreSQL(Configuration.GetConnectionString("Default"))
                 .UseMappingSchema(FoodDeliveryDataConnection.ConfigureMappings())
                 //default logging will log everything using the ILoggerFactory configured in the provider
-                .UseDefaultLogging(provider));
+                .UseDefaultLogging(provider),
+            ServiceLifetime.Singleton);
         services.RegisterPostgreSqlAdapters();
-        services.AddLogging(builder => builder.AddConsole());        
+        services.AddHostedService<OrderEventsHandler>();
+        services.RegisterKafkaOrderMessagesAndHandlers(Configuration);
+        services.AddLogging(builder =>
+        {
+            builder.AddConsole();;
+        });        
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

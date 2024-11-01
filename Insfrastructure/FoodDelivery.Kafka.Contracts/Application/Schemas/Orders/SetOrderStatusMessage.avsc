@@ -1,0 +1,11 @@
+{
+  "namespace" : "avro",
+  "type": "record",
+  "name": "SetOrderStatusMessage",
+  "fields": [
+    {"name": "OrderId", "type": "int"},
+    {"name": "ClientId", "type": "int"},
+    {"name": "OccurredOn", "type": "long"},
+    {"name": "NewStatus", "type": "int"}
+  ]
+}
