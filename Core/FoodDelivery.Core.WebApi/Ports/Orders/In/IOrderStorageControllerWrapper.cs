@@ -1,6 +1,7 @@
 using System;
 using FoodDelivery.Core.Contracts.Application.Events.Orders;
 using FoodDelivery.Core.Contracts.Application.Queries.Orders.Web;
+using FoodDelivery.Core.WebApi.Application.Queries.Orders.Web;
 using FoodDelivery.Core.WebApi.Ports.Orders.Out;
 
 

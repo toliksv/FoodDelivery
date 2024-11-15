@@ -1,6 +1,6 @@
 using System;
 
-namespace FoodDelivery.UI..Console.Ports.Out;
+namespace FoodDelivery.UI.Console.Ports.Out;
 
 /// <summary>
 /// Контроллер для RestEase с запросами к Core.WebApi

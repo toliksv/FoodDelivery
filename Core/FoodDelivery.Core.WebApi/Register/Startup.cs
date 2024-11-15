@@ -4,6 +4,7 @@ using Microsoft.Net.Http.Headers;
 
 using System.Net;
 using FoodDelivery.Core.Registrations;
+using FoodDelivery.Kafka.Register;
 
 namespace FoodDelivery.Core.WebApi.Register;
 
@@ -15,7 +16,6 @@ public class Startup
     {
        Configuration = configuration;
     }
-
     
     public void ConfigureServices(IServiceCollection services)
     {
@@ -33,7 +33,8 @@ public class Startup
             .RegisterCoreAdapters()
             .RegisterPolly()
             .RegisterStorageClient(Configuration)
-            .RegisterAdaptersAndMapper();                    
+            .RegisterAdaptersAndMapper()
+            .RegisterKafkaOrderMessagesAndHandlers(Configuration);                    
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

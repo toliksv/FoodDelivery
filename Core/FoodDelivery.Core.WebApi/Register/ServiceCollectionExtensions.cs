@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Markup;
+using Confluent.Kafka;
 using FoodDelivery.Core.Contracts.Domain.Aggregates.Orders;
 using FoodDelivery.Core.Contracts.Ports.Menu.In;
 using FoodDelivery.Core.Contracts.Ports.Menu.Out;
@@ -16,6 +17,8 @@ using FoodDelivery.Core.WebApi.Ports.Menu.In;
 using FoodDelivery.Core.WebApi.Ports.Menu.Out;
 using FoodDelivery.Core.WebApi.Ports.Orders.In;
 using FoodDelivery.Core.WebApi.Ports.Orders.Out;
+using FoodDelivery.Kafka.Options;
+using FoodDelivery.Kafka.Register;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Polly;
@@ -90,5 +93,5 @@ internal static  class ServiceCollectionExtensions
                 .AddTransient<IMenuRepository, MenuRepository>()
                 .AddTransient<IOrderStorageControllerWrapper, OrderStorageControllerWrapper>()
                 .AddTransient<IOrderStorage, OrderStorage>()
-                .AddTransient<IOrdersEventsSourceRepository, OrdersEventsSourceRepository>();         
+                .AddTransient<IOrdersEventsSourceRepository, OrdersEventsSourceRepository>();
 }

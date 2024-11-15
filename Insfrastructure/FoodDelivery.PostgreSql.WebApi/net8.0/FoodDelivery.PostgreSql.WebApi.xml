@@ -47,5 +47,10 @@
             <param name="cancellationToken">токен отменыю</param>
             <returns>результат.</returns>
         </member>
+        <member name="T:FoodDelivery.PostgreSql.WebApi.Events.OrderEventsHandler">
+            <summary>
+            Обработчик сообщений заказов.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -1,0 +1,11 @@
+{
+  "namespace" : "avro",
+  "type": "record",
+  "name": "RemoveOrderItemMessage",
+  "fields": [
+    {"name": "OrderId", "type": "int"},
+    {"name": "ClientId", "type": "int"},
+    {"name": "OccurredOn", "type": "long"},
+    {"name": "MenuItemId", "type": "int"}
+  ]
+}

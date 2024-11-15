@@ -27,8 +27,8 @@ public static class ServiceCollectionExtensions
      => 
         services
             .RegisterMappers()
-            .AddTransient<IMenuRepository, MenuRepository>()
-            .AddTransient<IOrdersEventsSourceRepository, OrdersEventsSourceRepository>();
+            .AddSingleton<IMenuRepository, MenuRepository>()
+            .AddSingleton<IOrdersEventsSourceRepository, OrdersEventsSourceRepository>();
 
     /// <summary>
     /// Регистрация мапперов.
